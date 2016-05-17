@@ -48,7 +48,7 @@ main(int argc, char *argv[])
 		handle_error("getcontext");
 	uctx_func2.uc_stack.ss_sp = func2_stack;
 	uctx_func2.uc_stack.ss_size = sizeof(func2_stack);
-	/* Successor context is f0(), unless argc > 1 */
+	/* Successor context is f1(), unless argc > 1 */
 	uctx_func2.uc_link = (argc > 1) ? NULL : &uctx_func1;
 	makecontext(&uctx_func2, func2, 0);
 
